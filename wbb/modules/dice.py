@@ -3,11 +3,6 @@ from pyrogram.types import Message
 
 from wbb import SUDOERS, USERBOT_PREFIX, app, app2
 
-__MODULE__ = "Dice"
-__HELP__ = """
-/dice
-    Roll a dice.
-"""
 
 
 @app2.on_message(filters.command("dice", prefixes=USERBOT_PREFIX) & SUDOERS)
