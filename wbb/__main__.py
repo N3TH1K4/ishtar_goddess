@@ -97,8 +97,6 @@ async def start_bot():
     log.info(f"USERBOT STARTED AS {USERBOT_NAME}!")
 
     restart_data = await clean_restart_stage()
-    served_chats = len(await get_served_chats())
-    served_users = len(await get_served_users())
     try:
         log.info("Sending online status")
         if restart_data:
@@ -123,8 +121,7 @@ async def start_bot():
         task.cancel()
     log.info("Dead!")
 
-served_users = len(await get_served_users())
-served_users = len(await get_served_users())
+
 home_keyboard_pm = InlineKeyboardMarkup(
     [
         [
@@ -148,7 +145,7 @@ home_keyboard_pm = InlineKeyboardMarkup(
 )
 
 home_text_pm = (
-        f"**Heyo!** It's me `The Goddess of War` **Ishtar**-sama\nI'm invincible and I can protect your groups from disasters and also I can command the members of your group!\nIf you are brave enough to summon me,__Use the below button!__!\n\n**Chats**: {served_chats}\n**Users**: {served_users}"
+        f"**Heyo!** It's me `The Goddess of War` **Ishtar**-sama\nI'm invincible and I can protect your groups from disasters and also I can command the members of your group!\nIf you are brave enough to summon me,__Use the below button!__"
 )
 
 keyboard = InlineKeyboardMarkup(
@@ -171,6 +168,8 @@ async def start(_, message):
         )
     if len(message.text.split()) > 1:
         name = (message.text.split(None, 1)[1]).lower()
+    served_chats = len(await get_served_chats())
+    served_users = len(await get_served_users())
         if name == "mkdwn_help":
             await message.reply(
                 MARKDOWN, parse_mode="html", disable_web_page_preview=True
@@ -191,6 +190,10 @@ async def start(_, message):
     else:
         await message.reply(
             home_text_pm,
+            "\n\n",
+            served_chats,
+            "\n\n",
+            served_users,
             reply_markup=home_keyboard_pm,
         )
     return
