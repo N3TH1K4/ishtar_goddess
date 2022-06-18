@@ -45,8 +45,7 @@ __MODULE__ = "ChatBot"
 __HELP__ = """
 /chatbot [ENABLE|DISABLE] To Enable Or Disable ChatBot In Your Chat.
 
-There's one module of this available for userbot also
-check userbot module help."""
+**@Goddess_of_War_Rbot**"""
 
 async def chat_bot_toggle(message: Message, is_userbot: bool):
     status = message.text.split(None, 1)[1].lower()
