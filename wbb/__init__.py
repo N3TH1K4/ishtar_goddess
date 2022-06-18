@@ -33,7 +33,7 @@ from pyrogram.types import Message
 from pyromod import listen
 from Python_ARQ import ARQ
 from telegraph import Telegraph
-
+from telethon.sync import TelegramClient ,events ,Button
 is_config = path.exists("config.py")
 
 if is_config:
@@ -116,9 +116,10 @@ aiohttpsession = ClientSession()
 arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
 
 app = Client("wbb", bot_token=BOT_TOKEN, api_id=API_ID, api_hash=API_HASH)
-
+tbot = TelegramClient('tbot', api_id=API_ID, api_hash=API_HASH).start(bot_token=BOT_TOKEN)
 log.info("Starting bot client")
 app.start()
+tbot.start()
 log.info("Starting userbot client")
 app2.start()
 
