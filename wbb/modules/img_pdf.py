@@ -75,7 +75,7 @@ async def convert(
     await main_message.reply_document(
         document=pdf,
         caption=section(
-            "IMG2PDF",
+            "IMG to PDF by HashCatz",
             body={
                 "Title": pdf.name,
                 "Size": f"{pdf.__sizeof__() / (10 ** 6)}MB",
@@ -101,7 +101,7 @@ async def img_to_pdf(_, message: Message):
             "Reply to an image (as document) or group of images."
         )
 
-    m = await message.reply_text("Converting..")
+    m = await message.reply_text("**Converting..**")
     start_time = time()
 
     if reply.media_group_id:
