@@ -62,6 +62,8 @@ async def get_user_info(user, already=False):
         "Sudo": is_sudo,
         "Karma": karma,
         "Gbanned": is_gbanned,
+        
+        "Powered by : HashCatz",
     }
     caption = section("User info", body)
     return [caption, photo_id]
@@ -92,6 +94,8 @@ async def get_chat_info(chat, already=False):
         "Scam": is_scam,
         "Restricted": is_restricted,
         "Description": [description],
+        
+        "Powered by : HashCatz",
     }
     caption = section("Chat info", body)
     return [caption, photo_id]
