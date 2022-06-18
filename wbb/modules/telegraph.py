@@ -5,7 +5,7 @@ from wbb import app, telegraph
 from wbb.core.decorators.errors import capture_err
 
 __MODULE__ = "Telegraph"
-__HELP__ = "/telegraph [Page name]: Paste styled text on telegraph."
+__HELP__ = "\n/telegraph [Page name]: Paste styled text on telegraph.\n\n**@Goddess_of_War_Rbot**"
 
 
 @app.on_message(filters.command("telegraph") & ~filters.edited)
