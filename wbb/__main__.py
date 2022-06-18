@@ -96,7 +96,7 @@ async def start_bot():
             )
 
         else:
-            await app.send_message(LOG_GROUP_ID, "Bot started!")
+            await app.send_message(LOG_GROUP_ID, "**I came back to life**")
     except Exception:
         pass
 
@@ -153,7 +153,7 @@ keyboard = InlineKeyboardMarkup(
 async def start(_, message):
     if message.chat.type != "private":
         return await message.reply(
-            "Pm Me For More Details.", reply_markup=keyboard
+            "**Yo pebble come to my palace for more details!**", reply_markup=keyboard
         )
     if len(message.text.split()) > 1:
         name = (message.text.split(None, 1)[1]).lower()
@@ -164,7 +164,7 @@ async def start(_, message):
         elif "_" in name:
             module = name.split("_", 1)[1]
             text = (
-                    f"Here is the help for **{HELPABLE[module].__MODULE__}**:\n"
+                    f"Hey baka here is the help for **{HELPABLE[module].__MODULE__}**:\n"
                     + HELPABLE[module].__HELP__
             )
             await message.reply(text, disable_web_page_preview=True)
@@ -199,23 +199,23 @@ async def help_command(_, message):
                     ]
                 )
                 await message.reply(
-                    f"Click on the below button to get help about {name}",
+                    f"Oi pebble Click on the below button to get help about {name}",
                     reply_markup=key,
                 )
             else:
                 await message.reply(
-                    "PM Me For More Details.", reply_markup=keyboard
+                    "Yo pebble come to my palace for more details!", reply_markup=keyboard
                 )
         else:
             await message.reply(
-                "Pm Me For More Details.", reply_markup=keyboard
+                "Yo pebble come to my palace for more details!", reply_markup=keyboard
             )
     else:
         if len(message.command) >= 2:
             name = (message.text.split(None, 1)[1]).replace(" ", "_").lower()
             if str(name) in HELPABLE:
                 text = (
-                        f"Here is the help for **{HELPABLE[name].__MODULE__}**:\n"
+                        f"Hey baka here is the help for **{HELPABLE[name].__MODULE__}**:\n"
                         + HELPABLE[name].__HELP__
                 )
                 await message.reply(text, disable_web_page_preview=True)
@@ -242,10 +242,9 @@ async def help_parser(name, keyboard=None):
     if not keyboard:
         keyboard = InlineKeyboardMarkup(paginate_modules(0, HELPABLE, "help"))
     return (
-        """Hello {first_name}, My name is {bot_name}.
-I'm a group management bot with some useful features.
-You can choose an option below, by clicking a button.
-Also you can ask anything in Support Group.
+        """Konichiwa, Its me the Goddess {bot_name}.
+I'm a God who can manage you entire group with great powers.
+You pebble can choose an option below, by clicking a button.
 """.format(
             first_name=name,
             bot_name=BOT_NAME,
@@ -281,20 +280,19 @@ async def help_button(client, query):
     back_match = re.match(r"help_back", query.data)
     create_match = re.match(r"help_create", query.data)
     top_text = f"""
-Hello {query.from_user.first_name}, My name is {BOT_NAME}.
-I'm a group management bot with some usefule features.
-You can choose an option below, by clicking a button.
-Also you can ask anything in Support Group.
+Konichiwa, Its me the Goddess {bot_name}.
+I'm a God who can manage you entire group with great powers.
+You pebble can choose an option below, by clicking a button..
 
 General command are:
- - /start: Start the bot
+ - /start: Call Me
  - /help: Give this message
  """
     if mod_match:
         module = (mod_match.group(1)).replace(" ", "_")
         text = (
                 "{} **{}**:\n".format(
-                    "Here is the help for", HELPABLE[module].__MODULE__
+                    "Hey baka here is the help for", HELPABLE[module].__MODULE__
                 )
                 + HELPABLE[module].__HELP__
         )
