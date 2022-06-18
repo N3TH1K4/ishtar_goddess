@@ -29,20 +29,6 @@ from wbb.core.decorators.errors import capture_err
 from wbb.utils.dbfunctions import add_sudo, get_sudoers, remove_sudo
 from wbb.utils.functions import restart
 
-__MODULE__ = "Sudo"
-__HELP__ = """
-**THIS MODULE IS ONLY FOR DEVS**
-
-.useradd - To Add A User In Sudoers.
-.userdel - To Remove A User From Sudoers.
-.sudoers - To List Sudo Users.
-
-**NOTE:**
-
-Never add anyone to sudoers unless you trust them,
-sudo users can do anything with your account, they
-can even delete your account.
-"""
 
 
 @app2.on_message(filters.command("useradd", prefixes=USERBOT_PREFIX) & SUDOERS)
