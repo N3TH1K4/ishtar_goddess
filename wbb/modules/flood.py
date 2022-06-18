@@ -45,6 +45,8 @@ __HELP__ = """
 Anti-Flood system, the one who sends more than 10 messages in a row, gets muted for an hour (Except for admins).
 
 /flood [ENABLE|DISABLE] - Turn flood detection on or off
+
+**@Goddess_of_War_Rbot**
 """
 
 DB = {}  # TODO Use mongodb instead of a fucking dict.
