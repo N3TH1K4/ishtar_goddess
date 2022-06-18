@@ -23,15 +23,11 @@ async def awallpaper(_, message: Message):
     target = "wallpaper"
     await message.reply_photo(nekos.img(target))
     
-@app.on_message(filters.command("holo") & ~filters.edited)
-async def holo(_, message: Message):
-    target = "holo"
-    await message.reply_photo(nekos.img(target))
 
-@app.on_message(filters.command("feed") & ~filters.edited)
+@app.on_message(filters.command("holo") & ~filters.edited)
 async def feed(_, message: Message):
-    reply_text = (
-    message.reply_to_message.reply_photo if message.reply_to_message else message.reply_photo
-    )    
     target = "holo"
-    reply_text(nekos.img(target))   
+    if message.reply_to_message:
+        await message.reply_to_message.reply_photo(nekos.img(target))
+    else:
+        await message.reply_photo(nekos.img(target))
