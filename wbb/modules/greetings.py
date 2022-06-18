@@ -80,17 +80,19 @@ The format should be something like below.
 
 ~ #This separater (~) should be there between text and buttons, remove this comment also
 
-button=[Duck, https://duckduckgo.com]
-button2=[Github, https://github.com]
+button=[Animepahe, https://animepahe.com]
+button2=[Ishtar, https://t.me/Goddess_of_War_Rbot]
 ```
 
 **NOTES ->**
 
 for /rules, you can do /filter rules to a message
 containing rules of your groups whenever a user
-sends /rules, he'll get the message
+sends /rules, That person'll get the message
 
 Checkout /markdownhelp to know more about formattings and other syntax.
+
+**@Goddess_of_War_Rbot**
 """
 
 answers_dicc = []
