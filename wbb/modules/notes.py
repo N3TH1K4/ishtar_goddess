@@ -47,6 +47,8 @@ __HELP__ = """/notes To Get All The Notes In The Chat.
 /delete [NOTE_NAME] To Delete A Note.
 
 Checkout /markdownhelp to know more about formattings and other syntax.
+
+**@Goddess_of_War_Rbot**
 """
 
 
