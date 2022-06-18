@@ -44,6 +44,8 @@ You can only pass the "all" parameter with /lock, not with /unlock
 
 Example:
     /lock all
+    
+**@Goddess_of_War_Rbot**
 """
 
 incorrect_parameters = "Incorrect Parameters, Check Locks Section In Help."
