@@ -29,6 +29,8 @@ __HELP__ = f"""
     - This will check for updates every {RSS_DELAY // 60} minutes.
     - You can only add one feed per chat.
     - Currently RSS and ATOM feeds are supported.
+    
+**@Goddess_of_War_Rbot**  
 """
 
 
