@@ -34,18 +34,18 @@ async def neko(_, message: Message):
 async def fox_girl(_, message: Message):
     target = "fox_girl"
     if message.reply_to_message:
-        await message.reply_to_message.reply_photo(nekos.img(target))
+        await message.reply_to_message.reply_photo(nekos.img(target),caption = "@Goddess_of_War_Rbot")
     else:
-        await message.reply_photo(nekos.img(target))
+        await message.reply_photo(nekos.img(target),caption = "@Goddess_of_War_Rbot")
     
 
 @app.on_message(filters.command("awallpaper") & ~filters.edited)
 async def awall(_, message: Message):
     target = "wallpaper"
     if message.reply_to_message:
-        await message.reply_to_message.reply_photo(nekos.img(target))
+        await message.reply_to_message.reply_photo(nekos.img(target),caption = "@Goddess_of_War_Rbot")
     else:
-        await message.reply_photo(nekos.img(target))
+        await message.reply_photo(nekos.img(target),caption = "@Goddess_of_War_Rbot")
         
         
 @app.on_message(filters.command("feed") & ~filters.edited)
