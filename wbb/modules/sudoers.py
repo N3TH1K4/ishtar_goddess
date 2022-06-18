@@ -51,20 +51,15 @@ from wbb.utils.functions import extract_user, extract_user_and_reason, restart
 __MODULE__ = "Sudoers"
 __HELP__ = """
 /stats - To Check System Status.
-
 /gstats - To Check Bot's Global Stats.
-
 /gban - To Ban A User Globally.
-
 /clean_db - Clean database.
-
 /broadcast - To Broadcast A Message To All Groups.
-
 /update - To Update And Restart The Bot
-
 /eval - Execute Python Code
-
 /sh - Execute Shell Code
+
+**@Goddess_of_War_Rbot**
 """
 
 
