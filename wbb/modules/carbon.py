@@ -46,6 +46,6 @@ async def carbon_func(_, message):
     m = await message.reply_text("**Started To prepare Carbon**")
     carbon = await make_carbon(message.reply_to_message.text)
     await m.edit("**Uploading...**")
-    await app.send_document(message.chat.id, carbon,caption="**Made By:** @Goddess_of_War_Rbot)
+    await app.send_document(message.chat.id, carbon,caption="**Made By:** @Goddess_of_War_Rbot")
     await m.delete()
     carbon.close()
