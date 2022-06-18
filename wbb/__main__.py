@@ -168,8 +168,8 @@ async def start(_, message):
         )
     if len(message.text.split()) > 1:
         name = (message.text.split(None, 1)[1]).lower()
-    served_chats = len(await get_served_chats())
-    served_users = len(await get_served_users())
+        served_chats = len(await get_served_chats())
+        served_users = len(await get_served_users())
         if name == "mkdwn_help":
             await message.reply(
                 MARKDOWN, parse_mode="html", disable_web_page_preview=True
