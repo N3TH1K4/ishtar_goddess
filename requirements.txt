@@ -25,5 +25,5 @@ fuzzysearch
 img2pdf
 telegraph
 pytube
-neko
+nekos.py
 
