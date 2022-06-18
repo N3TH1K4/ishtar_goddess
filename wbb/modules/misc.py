@@ -39,62 +39,26 @@ from wbb.utils.pastebin import paste
 
 __MODULE__ = "Misc"
 __HELP__ = """
-/asq
-    Ask a question
-
-/commit
-    Generate Funny Commit Messages
-
-/runs
-    Idk Test Yourself
-
-/id
-    Get Chat_ID or User_ID
-
-/random [Length]
-    Generate Random Complex Passwords
-
-/cheat [Language] [Query]
-    Get Programming Related Help
-
-/tr [LANGUAGE_CODE]
-    Translate A Message
-    Ex: /tr en
-
-/json [URL]
-    Get parsed JSON response from a rest API.
-
-/arq
-    Statistics Of ARQ API.
-
-/webss | .webss [URL] [FULL_SIZE?, use (y|yes|true) to get full size image. (optional)]
-    Take A Screenshot Of A Webpage
-
-/reverse
-    Reverse search an image.
-
-/carbon
-    Make Carbon from code.
-
-/tts
-    Convert Text To Speech.
-
-/autocorrect [Reply to a message]
-    Autocorrects the text in replied message.
-
-/pdf [Reply to an image (as document) or a group of images.]
-    Convert images to PDF, helpful for online classes.
-
-/markdownhelp
-    Sends mark down and formatting help.
-
-/backup
-    Backup database
-
-/ping
-    Check ping of all 5 DCs.
+/ask - Ask a question
+/commit - Generate Funny Commit Messages
+/runs - Try It
+/id - Get Chat_ID or User_ID
+/pgen [Length] - Generate Complex Passwords
+/cheat [Language] [Query] - Get Programming Related Help
+/tr [LANGUAGE_CODE] - Translate A Message `Ex: /tr en`
+/json [URL] - Get parsed JSON response from a rest API.
+/arq - Statistics Of ARQ API.
+/webss | .webss [URL] [FULL_SIZE?, use (y|yes|true) to get full size image. (optional)] - Take A Screenshot Of A Webpage
+/reverse or /grs - Reverse search an image.
+/carbon - Make Carbon from code.
+/tts - Convert Text To Speech.
+/autocorrect [Reply to a message] - Autocorrects the text in replied message.
+/pdf [Reply to an image (as document) or a group of images.] - Convert images to PDF, helpful for online classes.
+/markdownhelp - Sends mark down and formatting help.
+/backup - Backup database
+/ping - Check ping of all 5 DCs.
     
-#RTFM - Tell noobs to read the manual
+**@Goddess_of_War_Rbot**    
 """
 
 ASQ_LOCK = Lock()
@@ -139,7 +103,7 @@ async def ping_handler(_, message):
         await m.edit(text)
 
 
-@app.on_message(filters.command("asq") & ~filters.edited)
+@app.on_message(filters.command("ask") & ~filters.edited)
 async def asq(_, message):
     err = "Reply to text message or pass the question as argument"
     if message.reply_to_message:
@@ -159,16 +123,6 @@ async def asq(_, message):
 @app.on_message(filters.command("commit") & ~filters.edited)
 async def commit(_, message):
     await message.reply_text(await get("http://whatthecommit.com/index.txt"))
-
-
-@app.on_message(filters.command("RTFM", "#") & ~filters.edited)
-async def rtfm(_, message):
-    await message.delete()
-    if not message.reply_to_message:
-        return await message.reply_text("Reply To A Message lol")
-    await message.reply_to_message.reply_text(
-        "Are You Lost? READ THE FUCKING DOCS!"
-    )
 
 
 @app.on_message(filters.command("runs") & ~filters.edited)
@@ -215,7 +169,7 @@ async def getid(client, message):
 
 
 # Random
-@app.on_message(filters.command("random") & ~filters.edited)
+@app.on_message(filters.command("pgen") & ~filters.edited)
 @capture_err
 async def random(_, message):
     if len(message.command) != 2:
@@ -287,5 +241,5 @@ async def json_fetch(_, message):
 @app.on_message(filters.command(["kickme", "banme"]))
 async def kickbanme(_, message):
     await message.reply_text(
-        "Haha, it doesn't work that way, You're stuck with everyone here."
+        "Haha, it doesn't work that way Shithead, You're stuck with everyone here."
     )
