@@ -34,6 +34,8 @@ __MODULE__ = "Info"
 __HELP__ = """
 /info [USERNAME|ID] - Get info about a user.
 /chat_info [USERNAME|ID] - Get info about a chat.
+
+**@Goddess_of_War_Rbot**
 """
 
 
