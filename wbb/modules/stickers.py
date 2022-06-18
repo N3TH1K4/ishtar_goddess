@@ -244,18 +244,13 @@ async def kang(client, message: Message):
                     return await msg.edit("[ERROR]: INVALID_EMOJI_IN_ARGUMENT")
             limit += 1
             break
-
+        keyboardd = InlineKeyboardMarkup(
+            [[InlineKeyboardButton(text="Here", url=f"t.me/addstickers/{packname}")]]
+        )
         await msg.edit(
             "Sticker Kanged To [Pack](t.me/addstickers/{})\nEmoji: {}".format(
                 packname, sticker_emoji
-            ),InlineKeyboardMarkup(
-    [
-        [
-            InlineKeyboardButton(
-                text="Here",
-                url=f"t.me/addstickers/{packname}",
-            ),
-        ],])
+            ),reply_markup=keyboardd,
         )
     except (PeerIdInvalid, UserIsBlocked):
         keyboard = InlineKeyboardMarkup(
