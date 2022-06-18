@@ -27,7 +27,7 @@ from wbb import app, arq
 from wbb.core.decorators.errors import capture_err
 
 __MODULE__ = "Reddit"
-__HELP__ = "/reddit [query] - results something from reddit"
+__HELP__ = "\n/reddit [query] - results something from reddit\n\n**@Goddess_of_War_Rbot**"
 
 
 @app.on_message(filters.command("reddit") & ~filters.edited)
