@@ -36,7 +36,7 @@ async def reddit(_, message):
     if len(message.command) != 2:
         return await message.reply_text("/reddit needs an argument")
     subreddit = message.text.split(None, 1)[1]
-    m = await message.reply_text("Searching")
+    m = await message.reply_text("**Searching**")
     reddit = await arq.reddit(subreddit)
     if not reddit.ok:
         return await m.edit(reddit.result)
@@ -51,7 +51,9 @@ async def reddit(_, message):
     caption = f"""
 **Title:** `{title}`
 **Subreddit:** {sreddit}
-**PostLink:** {link}"""
+**PostLink:** {link}
+
+**@Goddess_of_War_Rbot**"""
     try:
         await message.reply_photo(photo=image, caption=caption)
         await m.delete()
