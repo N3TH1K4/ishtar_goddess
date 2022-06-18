@@ -99,16 +99,16 @@ async def inline_help_func(__HELP__):
             input_message_content=InputTextMessageContent(
                 "Click A Button To Get Started."
             ),
-            thumb_url="https://hamker.me/cy00x5x.png",
+            thumb_url="https://s3.zerochan.net/240/48/40/2982048.jpg",
             reply_markup=buttons,
         ),
         InlineQueryResultArticle(
-            title="Github Repo",
-            description="Get Github Respository Of Bot.",
+            title="Owner",
+            description="Owner's Account",
             input_message_content=InputTextMessageContent(
-                "https://github.com/thehamkercat/WilliamButcherBot"
+                "https://t.me/troj3n"
             ),
-            thumb_url="https://hamker.me/gjc9fo3.png",
+            thumb_url="https://s3.zerochan.net/240/21/48/2272421.jpg",
         ),
     ]
     answerss = await alive_function(answerss)
@@ -127,7 +127,7 @@ async def alive_function(answers):
     )
 
     msg = f"""
-**[William✨](https://github.com/thehamkercat/WilliamButcherBot):**
+**[IShtar](https://t.me/Goddess_of_War_Rbot):**
 **MainBot:** `{bot_state}`
 **UserBot:** `{ubot_state}`
 **Python:** `{pyver.split()[0]}`
@@ -139,8 +139,8 @@ async def alive_function(answers):
     answers.append(
         InlineQueryResultArticle(
             title="Alive",
-            description="Check Bot's Stats",
-            thumb_url="https://static2.aniimg.com/upload/20170515/414/c/d/7/cd7EEF.jpg",
+            description="Check Ishtar's Stats",
+            thumb_url="https://s3.zerochan.net/240/43/06/2365343.jpg",
             input_message_content=InputTextMessageContent(
                 msg, disable_web_page_preview=True
             ),
