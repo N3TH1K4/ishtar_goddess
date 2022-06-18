@@ -163,7 +163,7 @@ keyboard = InlineKeyboardMarkup(
 @app.on_message(~filters.edited & filters.command("start"))
 async def start(_, message):
     if message.chat.type != "private":
-        return await message.reply(
+        return await message.reply_photo("https://wallpapercave.com/dwp1x/wp6599471.jpg",caption =
             "**Yo pebble come to my palace for more details!**", reply_markup=keyboard
         )
     if len(message.text.split()) > 1:
@@ -188,6 +188,7 @@ async def start(_, message):
                 reply_markup=keyb,
             )
     else:
+        await message.reply_photo("https://wallpapercave.com/dwp1x/wp6599519.jpg")
         await message.reply(
             home_text_pm,
             "\n\n",
