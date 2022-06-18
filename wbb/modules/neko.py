@@ -31,7 +31,7 @@ async def holo(_, message: Message):
 @app.on_message(filters.command("feed") & ~filters.edited)
 async def feed(_, message: Message):
     reply_text = (
-    message.reply_to_message.reply_video if message.reply_to_message else message.reply_video
+    message.reply_to_message.reply_photo if message.reply_to_message else message.reply_photo
     )    
-    target = "feed"
+    target = "holo"
     reply_text(nekos.img(target))   
