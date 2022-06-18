@@ -18,7 +18,7 @@ With this module you can delete service messages in your group!
         -Left notify
         -Joined notify
 
-/antiservice [ON|OFF]
+/antiservice [enable | disable]
 
 **@Goddess_of_War_Rbot**
 """
@@ -33,24 +33,24 @@ With this module you can delete service messages in your group!
 async def anti_service(_, message):
     if len(message.command) != 2:
         return await message.reply_text(
-            "Usage: /antiservice [ON | OFF]"
+            "Usage: /antiservice [enable | disable]"
         )
     status = message.text.split(None, 1)[1].strip()
     status = status.lower()
     chat_id = message.chat.id
-    if status == "ON":
+    if status == "enable":
         await antiservice_on(chat_id)
         await message.reply_text(
             "Enabled AntiService System. I will Delete Service Messages from Now on."
         )
-    elif status == "OFF":
+    elif status == "disable":
         await antiservice_off(chat_id)
         await message.reply_text(
             "Disabled AntiService System. I won't Be Deleting Service Message from Now on."
         )
     else:
         await message.reply_text(
-            "Unknown Suffix, Use /antiservice [ON|OFF]"
+            "Unknown Suffix, Use /antiservice [enable|disable]"
         )
 
 
