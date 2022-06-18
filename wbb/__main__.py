@@ -39,6 +39,18 @@ from wbb import (
     app,
     log,
 )
+from wbb.utils.dbfunctions import (
+    get_blacklist_filters_count,
+    get_filters_count,
+    get_gbans_count,
+    get_karmas_count,
+    get_notes_count,
+    get_rss_feeds_count,
+    get_served_chats,
+    get_served_users,
+    get_warns_count,
+    remove_served_chat,
+)
 from wbb.modules import ALL_MODULES
 from wbb.modules.sudoers import bot_sys_stats
 from wbb.utils import paginate_modules
@@ -85,7 +97,8 @@ async def start_bot():
     log.info(f"USERBOT STARTED AS {USERBOT_NAME}!")
 
     restart_data = await clean_restart_stage()
-
+    served_chats = len(await get_served_chats())
+    served_users = len(await get_served_users())
     try:
         log.info("Sending online status")
         if restart_data:
@@ -134,7 +147,7 @@ home_keyboard_pm = InlineKeyboardMarkup(
 )
 
 home_text_pm = (
-        f"**Heyo!** It's me `The Goddess of War` **Ishtar**-sama\nI'm invincible and I can protect your groups from disasters and also I can command the members of your group!\nIf you are brave enough to summon me,__Use the below button!__!"
+        f"**Heyo!** It's me `The Goddess of War` **Ishtar**-sama\nI'm invincible and I can protect your groups from disasters and also I can command the members of your group!\nIf you are brave enough to summon me,__Use the below button!__!\n\n**Chats**: {served_chats}\n**Users**: {served_users}"
 )
 
 keyboard = InlineKeyboardMarkup(
