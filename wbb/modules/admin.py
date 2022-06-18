@@ -75,7 +75,10 @@ __HELP__ = """/ban - Ban A User
 /unmute - Unmute A User
 /ban_ghosts - Ban Deleted Accounts
 /report | @admins | @admin - Report A Message To Admins.
-/admincache - Reload admin list"""
+/admincache - Reload admin list
+
+**@Goddess_of_War_Rbot**
+"""
 
 
 async def member_permissions(chat_id: int, user_id: int):
