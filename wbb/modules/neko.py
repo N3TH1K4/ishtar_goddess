@@ -24,9 +24,9 @@ async def awallpaper(_, message: Message):
     await message.reply_photo(nekos.img(target))
     
 
-@app.on_message(filters.command("holo") & ~filters.edited)
-async def feed(_, message: Message):
-    target = "holo"
+@app.on_message(filters.command("fgirl") & ~filters.edited)
+async def fox_girl(_, message: Message):
+    target = "fox_girl"
     if message.reply_to_message:
         await message.reply_to_message.reply_photo(nekos.img(target))
     else:
