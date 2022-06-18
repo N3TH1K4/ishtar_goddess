@@ -31,7 +31,7 @@ from wbb.core.decorators.errors import capture_err
 from wbb.utils.dbfunctions import get_couple, save_couple
 
 __MODULE__ = "Shippering"
-__HELP__ = "/detect_gay - To Choose Couple Of The Day"
+__HELP__ = "/shipp - To Choose Couple Of The Day\n\n**@Goddess_of_War_Rbot**"
 
 
 # Date and time
@@ -61,13 +61,13 @@ def tomorrow():
     return str(dt_tom())
 
 
-@app.on_message(filters.command("detect_gay") & ~filters.edited)
+@app.on_message(filters.command("shipp") & ~filters.edited)
 @capture_err
 async def couple(_, message):
     if message.chat.type == "private":
-        return await message.reply_text("This command only works in groups.")
+        return await message.reply_text("Are you mad? this works only in groups baaka .")
 
-    m = await message.reply("Detecting gay among us...")
+    m = await message.reply("Love Filter Started!")
 
     try:
         chat_id = message.chat.id
@@ -89,7 +89,10 @@ async def couple(_, message):
             couple_selection_message = f"""**Couple of the day:**
 {c1_mention} + {c2_mention} = ❤️
 
-__New couple of the day may be chosen at 12AM {tomorrow()}__"""
+__New couple of the day may be chosen at 12AM {tomorrow()}__
+
+Love Filter Powered By **HashCatz**
+"""
             await m.edit(couple_selection_message)
             couple = {"c1_id": c1_id, "c2_id": c2_id}
             await save_couple(chat_id, today(), couple)
@@ -102,7 +105,9 @@ __New couple of the day may be chosen at 12AM {tomorrow()}__"""
             couple_selection_message = f"""Couple of the day:
 [{c1_name}](tg://openmessage?user_id={c1_id}) + [{c2_name}](tg://openmessage?user_id={c2_id}) = ❤️
 
-__New couple of the day may be chosen at 12AM {tomorrow()}__"""
+__New couple of the day may be chosen at 12AM {tomorrow()}__
+
+Love Filter Powered By **HashCatz**"""
             await m.edit(couple_selection_message)
     except Exception as e:
         print(e)
