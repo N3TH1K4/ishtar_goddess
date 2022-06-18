@@ -57,7 +57,9 @@ __HELP__ = """
 /markdownhelp - Sends mark down and formatting help.
 /backup - Backup database
 /ping - Check ping of all 5 DCs.
-    
+/crypto [currency] - Get Real Time value from currency given    
+/dice - Roll a dice.
+
 **@Goddess_of_War_Rbot**    
 """
 
