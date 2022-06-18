@@ -28,10 +28,10 @@ async def holo(_, message: Message):
     target = "holo"
     await message.reply_photo(nekos.img(target))
 
-@app.on_message(filters.command("poke") & ~filters.edited)
-async def poke(_, message: Message):
+@app.on_message(filters.command("feed") & ~filters.edited)
+async def feed(_, message: Message):
     reply_text = (
     message.reply_to_message.reply_video if message.reply_to_message else message.reply_video
     )    
-    target = "poke"
+    target = "feed"
     reply_text(nekos.img(target))   
