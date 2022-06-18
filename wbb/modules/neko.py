@@ -18,3 +18,20 @@ async def neko(_, message: Message):
     target = "neko"
     await message.reply_photo(nekos.img(target))
     
+@app.on_message(filters.command("awallpaper") & ~filters.edited)
+async def awallpaper(_, message: Message):
+    target = "wallpaper"
+    await message.reply_photo(nekos.img(target))
+    
+@app.on_message(filters.command("holo") & ~filters.edited)
+async def holo(_, message: Message):
+    target = "holo"
+    await message.reply_photo(nekos.img(target))
+
+@app.on_message(filters.command("poke") & ~filters.edited)
+async def poke(_, message: Message):
+    reply_text = (
+    message.reply_to_message.reply_video if message.reply_to_message else message.reply_video
+    )    
+    target = "poke"
+    reply_text(nekos.img(target))   
