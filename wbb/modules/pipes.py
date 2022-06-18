@@ -55,6 +55,8 @@ Use this module to create a pipe that will forward messages of one chat/channel 
 **NOTE:**
     These pipes are only temporary, and will be destroyed
     on restart.
+    
+**@Goddess_of_War_Rbot**
 """
 pipes_list_bot = {}
 pipes_list_userbot = {}
