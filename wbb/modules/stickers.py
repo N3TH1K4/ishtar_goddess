@@ -53,12 +53,11 @@ from wbb.utils.stickerset import (
 
 __MODULE__ = "Stickers"
 __HELP__ = """
-/sticker_id
-    To get FileID of a Sticker.
-/get_sticker
-    To get sticker as a photo and document.
-/kang
-    To kang a Sticker or an Image."""
+/sticker_id - To get FileID of a Sticker.
+/get_sticker - To get sticker as a photo and document.
+/kang - To kang a Sticker or an Image.
+
+**@Goddess_of_War_Rbot**"""
 
 MAX_STICKERS = (
     120  # would be better if we could fetch this limit directly from telegram
@@ -146,7 +145,7 @@ async def kang(client, message: Message):
         return await message.reply_text(
             "You are anon admin, kang stickers in my pm."
         )
-    msg = await message.reply_text("Kanging Sticker..")
+    msg = await message.reply_text("**Stealing The Sticker Heh Heh**")
 
     # Find the proper emoji
     args = message.text.split()
@@ -158,7 +157,7 @@ async def kang(client, message: Message):
     ):
         sticker_emoji = message.reply_to_message.sticker.emoji
     else:
-        sticker_emoji = "🤔"
+        sticker_emoji = "❤️"
 
     # Get the corresponding fileid, resize the file if necessary
     doc = message.reply_to_message.photo or message.reply_to_message.document
@@ -249,7 +248,14 @@ async def kang(client, message: Message):
         await msg.edit(
             "Sticker Kanged To [Pack](t.me/addstickers/{})\nEmoji: {}".format(
                 packname, sticker_emoji
-            )
+            ),InlineKeyboardMarkup(
+    [
+        [
+            InlineKeyboardButton(
+                text="Here",
+                url=f"t.me/addstickers/{packname}",
+            ),
+        ],])
         )
     except (PeerIdInvalid, UserIsBlocked):
         keyboard = InlineKeyboardMarkup(
