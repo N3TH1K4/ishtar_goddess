@@ -280,7 +280,7 @@ async def help_button(client, query):
     back_match = re.match(r"help_back", query.data)
     create_match = re.match(r"help_create", query.data)
     top_text = f"""
-Konichiwa, Its me the Goddess {bot_name}.
+Konichiwa, Its me the Goddess Ishtar.
 I'm a God who can manage you entire group with great powers.
 You pebble can choose an option below, by clicking a button..
 
