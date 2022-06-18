@@ -189,12 +189,7 @@ async def start(_, message):
             )
     else:
         await message.reply_photo("https://wallpapercave.com/dwp1x/wp6599519.jpg")
-        await message.reply(
-            home_text_pm,
-            "\n\n",
-            served_chats,
-            "\n\n",
-            served_users,
+        await message.reply(f"{home_text_pm}\n\n{served_chats}\n{served_users}",
             reply_markup=home_keyboard_pm,
         )
     return
