@@ -26,4 +26,4 @@ img2pdf
 telegraph
 pytube
 neko
-html2html5_lib
+html2html5lib
