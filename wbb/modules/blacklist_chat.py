@@ -19,6 +19,8 @@ in which you don't want it to be in.
 /blacklist_chat [CHAT_ID] - Blacklist a chat.
 /whitelist_chat [CHAT_ID] - Whitelist a chat.
 /blacklisted - Show blacklisted chats.
+
+**@Goddess_of_War_Rbot**
 """
 
 
