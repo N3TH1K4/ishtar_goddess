@@ -11,11 +11,16 @@ from wbb.utils.dbfunctions import (
     is_antiservice_on,
 )
 
-__MODULE__ = "AntiService"
+__MODULE__ = "Anti-Service"
 __HELP__ = """
-Plugin to delete service messages in a chat!
+With this module you can delete service messages in your group!
+    ex: -pin notify
+        -Left notify
+        -Joined notify
 
-/antiservice [enable|disable]
+/antiservice [ON|OFF]
+
+**@Goddess_of_War_Rbot**
 """
 
 
@@ -28,24 +33,24 @@ Plugin to delete service messages in a chat!
 async def anti_service(_, message):
     if len(message.command) != 2:
         return await message.reply_text(
-            "Usage: /antiservice [enable | disable]"
+            "Usage: /antiservice [ON | OFF]"
         )
     status = message.text.split(None, 1)[1].strip()
     status = status.lower()
     chat_id = message.chat.id
-    if status == "enable":
+    if status == "ON":
         await antiservice_on(chat_id)
         await message.reply_text(
             "Enabled AntiService System. I will Delete Service Messages from Now on."
         )
-    elif status == "disable":
+    elif status == "OFF":
         await antiservice_off(chat_id)
         await message.reply_text(
             "Disabled AntiService System. I won't Be Deleting Service Message from Now on."
         )
     else:
         await message.reply_text(
-            "Unknown Suffix, Use /antiservice [enable|disable]"
+            "Unknown Suffix, Use /antiservice [ON|OFF]"
         )
 
 
