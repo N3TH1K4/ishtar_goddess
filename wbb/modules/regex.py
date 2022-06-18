@@ -7,7 +7,6 @@ from pyrogram import filters
 from wbb import app
 from wbb.utils.filter_groups import regex_group
 
-__MODULE__ = "Sed"
 __HELP__ = "**Usage:**\ns/foo/bar"
 
 DELIMITERS = ("/", ":", "|", "_")
