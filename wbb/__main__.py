@@ -123,7 +123,8 @@ async def start_bot():
         task.cancel()
     log.info("Dead!")
 
-
+served_users = len(await get_served_users())
+served_users = len(await get_served_users())
 home_keyboard_pm = InlineKeyboardMarkup(
     [
         [
