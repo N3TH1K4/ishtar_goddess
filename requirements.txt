@@ -25,3 +25,5 @@ fuzzysearch
 img2pdf
 telegraph
 pytube
+neko
+html2htmllib
