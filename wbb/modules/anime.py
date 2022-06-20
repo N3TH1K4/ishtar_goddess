@@ -2,11 +2,11 @@
 
 
 __HELP__ = """
-/anime - Use this cmd to get info on specific anime using keywords (anime name) or Anilist ID
-(Can lookup info on sequels and prequels)
-
-/anilist - Use this cmd to choose between multiple animes with similar names related to searched query
+/anime - Use this cmd to choose between multiple animes with similar names related to searched query
 (Doesn't includes buttons for prequel and sequel)
+
+/anilist - Use this cmd to get info on specific anime using keywords (anime name) or Anilist ID
+(Can lookup info on sequels and prequels)
 
 /character - Use this cmd to get info on character
 
