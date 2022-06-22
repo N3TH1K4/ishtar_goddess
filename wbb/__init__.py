@@ -50,8 +50,8 @@ MOD_LOAD = []
 MOD_NOLOAD = []
 SUDOERS = filters.user()
 bot_start_time = time.time()
-
-
+boot = time.time()
+botid = 0
 class Log:
     def __init__(self, save_to_file=False, file_name="wbb.log"):
         self.save_to_file = save_to_file
