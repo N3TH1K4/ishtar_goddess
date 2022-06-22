@@ -13,12 +13,13 @@ import time
 from pyrogram import filters
 from pyrogram.types import Message
 
-from wbb import app, botid, botname
+from wbb import app
 from wbb.database import add_served_chat, is_afk, remove_afk
 from wbb.helpers import get_readable_time
 
 chat_watcher_group = 1
-
+botid= 5586017257
+botname = "@Goddess_of_War_Rbot"
 
 @app.on_message(
     ~filters.edited & ~filters.me & ~filters.bot & ~filters.via_bot,
