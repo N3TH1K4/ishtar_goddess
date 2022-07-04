@@ -23,7 +23,10 @@ class Feed:
             text += f"**Published:** `{self.published}`\n"
         if self.updated:
             text += f"**Last Updated:** `{self.updated}`\n"
-
+            
+        if self.link:
+            text += f"**Magnet:**\n\n `{self.link}`\n\n"
+            
         if self.summary and "<div" not in self.summary:
             text += f"**Summary:** {self.summary.strip()}\n"
 
