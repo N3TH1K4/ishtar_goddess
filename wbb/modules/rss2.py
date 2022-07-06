@@ -6,8 +6,13 @@ from pyrogram.errors import (
     ChannelInvalid, ChannelPrivate, InputUserDeactivated,
     UserIsBlocked
 )
-from pyrogram.types import Message
-
+from pyrogram.types import (
+    CallbackQuery,
+    ChatPermissions,
+    InlineKeyboardButton,
+    InlineKeyboardMarkup,
+    Message,
+)
 from wbb import RSS_DELAY, app, log
 from wbb.core.decorators.errors import capture_err
 from wbb.utils.dbfunctions import (
@@ -55,10 +60,11 @@ async def rss_worker():
 
                 if feed.title == last_title:
                     continue
-
+                
                 await app.send_message(
                     chat, feed.parsed(), disable_web_page_preview=True
                 )
+                await app.send_message(chat,feed.link)
                 await update_rss_feed(chat, feed.title)
             except (
                     ChannelInvalid, ChannelPrivate, InputUserDeactivated,
