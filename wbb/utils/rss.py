@@ -32,4 +32,4 @@ class Feed:
             text += f"**Summary:** {self.summary.strip()}\n"
 
         if text:
-            return "\n".join([i.strip() for i in text.splitlines()]),InlineKeyboardMarkup(btn)
+            return "\n".join([i.strip() for i in text.splitlines()])
