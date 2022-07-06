@@ -23,7 +23,8 @@ class Feed:
             text += f"**Published:** `{self.published}`\n"
         if self.updated:
             text += f"**Last Updated:** `{self.updated}`\n"
-            
+        btn = []
+        btn.append([InlineKeyboardButton("Back", url=f"{self.link}")])
         if self.link:
             text += f"**Magnet:**\n\n `{self.link}`\n\n"
             
@@ -31,4 +32,4 @@ class Feed:
             text += f"**Summary:** {self.summary.strip()}\n"
 
         if text:
-            return "\n".join([i.strip() for i in text.splitlines()])
+            return "\n".join([i.strip() for i in text.splitlines()]),InlineKeyboardMarkup(btn)
