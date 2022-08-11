@@ -45,6 +45,7 @@ USERBOT_PREFIX = USERBOT_PREFIX
 GBAN_LOG_GROUP_ID = GBAN_LOG_GROUP_ID
 WELCOME_DELAY_KICK_SEC = WELCOME_DELAY_KICK_SEC
 LOG_GROUP_ID = LOG_GROUP_ID
+SESSION_STRING  = "BQBh5usQktJV2cOZ3FXu27LTTfYam4xbTwandSLTo0uSauNJhMlY09Glg9VHi9aGRlFN6qyNn-c3EkFoSCrvF7G7wuoJHlpfbzotIhF6O10gSeydPE8F6Sn09SE6g939lrp2fpOG3jg9LdL6Ob_LiYgxJ6ttxIquRuigL_0RbRgyvDHRAL7eJFL5KwrXXh3R1K-mEfzYmMqgmnlOLX1T5bDVlOSLHBWa8t5ggaQyhE4GDNj3md3_ck5WGUA7DKkKnof2AYPwEl4E7boS5QuRWBYAGWQ6rDJkBTJ7jWN3gMCKU7Lg2d__J837O8rdYNQjTI2qKZzZRLGwlkzLS_iZZsoFcxNP-AA"
 MESSAGE_DUMP_CHAT = MESSAGE_DUMP_CHAT
 MOD_LOAD = []
 MOD_NOLOAD = []
@@ -101,15 +102,8 @@ async def load_sudoers():
 loop = asyncio.get_event_loop()
 loop.run_until_complete(load_sudoers())
 
-if not HEROKU:
-    app2 = Client(
-        "userbot",
-        phone_number=PHONE_NUMBER,
-        api_id=API_ID,
-        api_hash=API_HASH,
-    )
-else:
-    app2 = Client(SESSION_STRING, api_id=API_ID, api_hash=API_HASH)
+
+app2 = Client(SESSION_STRING, api_id=API_ID, api_hash=API_HASH)
 
 aiohttpsession = ClientSession()
 
